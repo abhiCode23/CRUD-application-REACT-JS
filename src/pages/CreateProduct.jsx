@@ -1,19 +1,19 @@
-import axios from 'axios'
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useState } from 'react';
 
 const CreateProduct = () => {
-  const API = "https://api.escuelajs.co/api/v1/products/"
+  const API = "https://api.escuelajs.co/api/v1/products/";
   const [productDetail, setProductDetail] = useState({
     title: '',
     price: '',
-    description: "",
+    description: '',
     categoryId: '',
     images: ["https://placeimg.com/640/480/any"]
-  })
+  });
 
   const createProduct = async () => {
     try {
-      await axios.post(API, productDetail)
+      await axios.post(API, productDetail);
       setProductDetail({
         title: '',
         price: '',
@@ -27,11 +27,9 @@ const CreateProduct = () => {
       alert('There was an error creating the product. Please try again.');
     }
   };
-  
-
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-8 bg-white shadow-lg rounded-lg">
+    <div className="max-w-lg mx-auto mt-10 p-4 md:p-8 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-bold mb-4 text-center">Add a Product</h2>
       
       <form className="space-y-4">
@@ -94,7 +92,7 @@ const CreateProduct = () => {
         </div>
       </form>
     </div>
-  )
+  );
 }
 
-export default CreateProduct
+export default CreateProduct;

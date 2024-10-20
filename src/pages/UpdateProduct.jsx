@@ -31,16 +31,14 @@ const Update = () => {
   };
 
   const updateProduct = async () => {
-   
     console.log("ID is ", id);
     
     try {
-      const res = await axios.put(`https://api.escuelajs.co/api/v1/products/${id}`,product);
-      console.log("Updates Successfully");
+      const res = await axios.put(`https://api.escuelajs.co/api/v1/products/${id}`, product);
+      console.log("Updated Successfully");
       console.log(res.data);
     } catch (error) {
-      console.log("Error is ",error);
-      
+      console.log("Error is ", error);
     }
   };
 
